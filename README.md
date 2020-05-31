@@ -12,6 +12,7 @@ Run setup.sh for installing script prerequisites and running the selenium driver
 
 ```sh
 $ chmod +x setup.sh
+$ sudo ./setup.sh
 ```
 
 License
