@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 import time
 from pynput.keyboard import Key, Controller
 
@@ -37,9 +36,14 @@ def scraper(pages, url):
 	jspdf.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js';
 	document.body.appendChild(jspdf);"""
 	driver.execute_script(javaScript)
+	time.sleep(2)
+	keyboard.press(Key.enter)
+	keyboard.release(Key.enter)
 
 if __name__ == '__main__':
-	pages = input("Approximate Pages to Scrape: ")
+	print("Please be magnanimous with how many pages you specify...")
+	pages = input("Approximate Pages to Scrape: ") or "14"
+	print(pages)
 	url = input("Google Drive Url to Scrape From: ")
 	scraper(int(pages), url)
 
